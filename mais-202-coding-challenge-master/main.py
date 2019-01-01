@@ -74,6 +74,6 @@ for i in range(len(average.values)):    #reading each interest and purpose value
     row.append(temp2)
 label=["average interest"]              #table title
 axTable.table(cellText=interest,rowLabels=row,colLabels=label,cellLoc='center',colWidths=[10]) #matplotlib table in the subplot
-
+plt.show()
 
 
