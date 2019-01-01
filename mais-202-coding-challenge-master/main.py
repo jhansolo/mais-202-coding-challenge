@@ -25,7 +25,7 @@ import matplotlib.gridspec as gridspec
 
 """parsing the csv data with pandas"""
 
-loadPath=r"..\mais-202-coding-challenge-master\data.csv"
+loadPath=r"data.csv"
 data=pd.read_csv(loadPath)
 data=data.set_index("purpose")          #setting the purpose column as the dataframe index
 purpose=(data.index.unique())           #find unique instances within the purpose entries
