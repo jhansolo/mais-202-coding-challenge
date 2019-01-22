@@ -33,18 +33,18 @@ sortKey=np.argsort(purpose)             #alphabetical sorting, not necessary, bu
 purpose=purpose[sortKey]                #implement alphabetical sorting
 
 average=[]                              #declare empty array for appending average interest of each purpose
-                                        #more efficient to convert this list later to pd Series rather than Series right away
-
-"""tallying the average interest rate for each purpose"""
+#                                        #more efficient to convert this list later to pd Series rather than Series right away
+#
+#"""tallying the average interest rate for each purpose"""
 for i in purpose:
     tempFrameView=data.loc[i]           #temporary view of the dataframe with only rows corrsponding to a particular instance in the purpose list
     mean_int=tempFrameView["int_rate"].mean()   #talling up the mean interest rate for that purpose
     average.append(mean_int)                    #append onto the average list
-
+#
 average=pd.Series(average)              #convert python list to pandas Series
 average.set_axis(purpose,inplace=True)  #set Series axis to the list of purposes
-
-
+#
+#
 """prepping to plot the bar graph and table"""
 gs=gridspec.GridSpec(4,10, wspace=5)               #3x6 subplots layout
 
@@ -76,4 +76,4 @@ label=["average interest"]              #table title
 axTable.table(cellText=interest,rowLabels=row,colLabels=label,cellLoc='center',colWidths=[10]) #matplotlib table in the subplot
 plt.show()
 
-
+#
